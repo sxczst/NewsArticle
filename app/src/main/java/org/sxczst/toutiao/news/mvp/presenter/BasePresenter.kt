@@ -5,7 +5,7 @@ package org.sxczst.toutiao.news.mvp.presenter
  * @Date        :Created in 2020/11/11 19:52
  * @Description :
  */
-class BasePresenter<V> {
+open class BasePresenter<V> {
     private var mBaseView: V? = null
 
     /**
