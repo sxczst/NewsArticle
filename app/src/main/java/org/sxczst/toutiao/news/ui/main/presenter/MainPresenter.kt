@@ -9,4 +9,8 @@ import org.sxczst.toutiao.news.ui.main.view.MainView
  * @Description :
  */
 class MainPresenter : BasePresenter<MainView>() {
+
+    fun getTest(str: String) {
+        getBaseView()?.setData(str)
+    }
 }
