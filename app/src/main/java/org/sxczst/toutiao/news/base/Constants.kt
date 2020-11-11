@@ -6,6 +6,6 @@ package org.sxczst.toutiao.news.base
  * @Description :常量类
  */
 object Constants {
-    const val BASE_URL = "https://www.apiopen.top/"
-    const val BASE_URL_TEST = "https://www.apiopen.top/"
+    const val BASE_URL = "https://api.apiopen.top/"
+    const val BASE_URL_TEST = "https://api.apiopen.top/"
 }

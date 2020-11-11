@@ -12,6 +12,6 @@ import retrofit2.http.GET
  */
 interface UserApi {
 
-    @GET("journalismApi")
+    @GET("todayVideo")
     fun getTest(): Observable<BaseModel<MainModel>>
 }
