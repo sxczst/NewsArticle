@@ -16,7 +16,7 @@ abstract class BaseActivity<V, P : BasePresenter<V>> : AppCompatActivity(), Base
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
-        StatusBarUtils.setStatusBar(this, Constants.COMMON_BAR, R.color.c_e6645f)
+        StatusBarUtils.setStatusBar(this, Constants.COMMON_BAR, R.color.c_ffffff)
         if (mPresenter == null) {
             mPresenter = createPresenter()
         }

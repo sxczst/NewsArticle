@@ -1,5 +1,6 @@
 package org.sxczst.toutiao.news.ui.main.act
 
+import android.content.Intent
 import android.graphics.Color
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import org.sxczst.toutiao.news.ui.main.frg.HomeFragment
 import org.sxczst.toutiao.news.ui.main.model.TitleModel
 import org.sxczst.toutiao.news.ui.main.presenter.MainPresenter
 import org.sxczst.toutiao.news.ui.main.view.MainView
+import org.sxczst.toutiao.news.ui.user.act.RegisterActivity
 import org.sxczst.toutiao.news.utils.StatusBarUtils
 
 class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView {
@@ -31,8 +33,9 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView {
     override fun initView() {
         tv_test.setOnClickListener {
             getPresenter()?.getTest("test")
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
-//        StatusBarUtils.setStatusBar(this, Constants.COMMON_BAR, R.color.colorPrimary)
+        StatusBarUtils.setStatusBar(this, Constants.COMMON_BAR, R.color.c_e6645f)
         val titles = resources.getStringArray(R.array.title)
         val selectIds = resources.obtainTypedArray(R.array.select)
         val unSelectIds = resources.obtainTypedArray(R.array.un_select)

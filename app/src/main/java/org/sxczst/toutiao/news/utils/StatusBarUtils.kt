@@ -3,6 +3,9 @@ package org.sxczst.toutiao.news.utils
 import android.app.Activity
 import android.os.Build
 import android.view.View
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.IntDef
 import androidx.core.content.ContextCompat
 import org.sxczst.toutiao.news.base.Constants
 
@@ -13,7 +16,11 @@ import org.sxczst.toutiao.news.base.Constants
  */
 object StatusBarUtils {
 
-    fun setStatusBar(activity: Activity, barType: Int, colorIds: Int) {
+    /**
+     * 修改状态栏颜色
+     * @param colorIds 颜色资源Id
+     */
+    fun setStatusBar(activity: Activity, barType: Int, @ColorRes colorIds: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             if (barType == Constants.HOME_BAR) {
                 // 首页状态栏样式

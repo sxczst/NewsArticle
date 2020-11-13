@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="7dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="37dp"
+        android:background="@android:color/white"
+        android:contentDescription="注册界面返回键"
+        android:scaleType="centerCrop"
+        android:src="@drawable/btn_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="42dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/register_title"
+        android:textColor="@color/c_222222"
+        android:textSize="21sp"
+        app:drawableStartCompat="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+    <TextView
+        android:id="@+id/tv_86"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="78dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="+86"
+        android:textColor="@color/c_222222"
+        android:textSize="15sp"
+        app:drawableRightCompat="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <EditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@color/c_ffffff"
+        android:hint="13753973040"
+        android:paddingStart="5dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_86"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_86"
+        app:layout_constraintTop_toTopOf="@id/tv_86" />
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/c_d8d8d8"
+        app:layout_constraintEnd_toEndOf="@id/et_phone_number"
+        app:layout_constraintStart_toStartOf="@id/tv_86"
+        app:layout_constraintTop_toBottomOf="@id/tv_86" />
+
+    <CheckBox
+        android:id="@+id/cb_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@id/v_line"
+        app:layout_constraintTop_toBottomOf="@id/v_line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_protocol"
+        app:layout_constraintBottom_toBottomOf="@id/cb_"
+        app:layout_constraintStart_toEndOf="@id/cb_"
+        app:layout_constraintTop_toTopOf="@id/cb_" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/c_e6645f"
+        app:cardCornerRadius="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,25 +10,21 @@ import org.sxczst.toutiao.news.ui.user.view.RegisterView
  * @Date        :Created in 2020/11/13 18:51
  * @Description :用户注册
  */
-class RegisterActivity : BaseActivity<RegisterView, RegisterPresenter>() {
+class RegisterActivity : BaseActivity<RegisterView, RegisterPresenter>(), RegisterView {
 
     override fun getLayoutId(): Int = R.layout.activity_register
 
     override fun initData() {
-        TODO("Not yet implemented")
     }
 
     override fun initView() {
-        TODO("Not yet implemented")
     }
 
     override fun createPresenter(): RegisterPresenter? = RegisterPresenter()
 
     override fun <T> setData(data: T) {
-        TODO("Not yet implemented")
     }
 
     override fun setError(error: String) {
-        TODO("Not yet implemented")
     }
 }
