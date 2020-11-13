@@ -8,4 +8,7 @@ package org.sxczst.toutiao.news.base
 object Constants {
     const val BASE_URL = "https://api.apiopen.top/"
     const val BASE_URL_TEST = "https://api.apiopen.top/"
+
+    const val HOME_BAR = 1
+    const val COMMON_BAR = 2
 }
