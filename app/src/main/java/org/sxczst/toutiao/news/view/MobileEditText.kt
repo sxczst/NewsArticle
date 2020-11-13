@@ -18,7 +18,7 @@ import org.sxczst.toutiao.news.R
  */
 class MobileEditText @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = R.attr.editTextStyle
-) : AppCompatEditText(context, attrs, defStyleAttr), TextWatcher {
+) : AppCompatEditText(context, attrs, defStyleAttr) {
     /**
      * 输入框后面的小图标
      */
@@ -30,6 +30,8 @@ class MobileEditText @JvmOverloads constructor(
         draw?.apply {
             setBounds(0, 0, minimumWidth, minimumHeight)
         }
+        addTextChangedListener(TextWatcherEditText())
+        isShow(false)
     }
 
     /**
@@ -50,39 +52,13 @@ class MobileEditText @JvmOverloads constructor(
         )
     }
 
-    override fun afterTextChanged(s: Editable?) {
-
-    }
-
-    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-    }
-
-    /**
-     * 监听输入内容改变的方法
-     */
-    override fun onTextChanged(
-        text: CharSequence?,
-        start: Int,
-        lengthBefore: Int,
-        lengthAfter: Int
-    ) {
-        super.onTextChanged(text, start, lengthBefore, lengthAfter)
-
-        if (TextUtils.isEmpty(text.toString())) {
-            isShow(false)
-        } else {
-            // 输入框有内容则显示监听删除内容动作的图片
-            isShow(true)
-        }
-    }
-
     /**
      * 处理点击清空输入框内容的监听
      */
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         if (event?.action == MotionEvent.ACTION_DOWN) {
             // 点击的是否是删除小图标
-            var isDelete = event.x > (width - totalPaddingEnd) &&
+            val isDelete = event.x > (width - totalPaddingEnd) &&
                     event.x < (width - paddingEnd) &&
                     event.y > 0 &&
                     event.y < height
@@ -93,4 +69,42 @@ class MobileEditText @JvmOverloads constructor(
         }
         return super.onTouchEvent(event)
     }
+
+    private inner class TextWatcherEditText : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+
+        /**
+         * 监听输入内容改变的方法
+         */
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (TextUtils.isEmpty(text.toString())) {
+                isShow(false)
+            } else {
+                // 输入框有内容则显示监听删除内容动作的图片
+                isShow(true)
+            }
+            var textContent = s.toString()
+            val length = textContent.length
+            // 137 5397 3040 在第三位和第七为后面添加一个空格
+            if (length == 4 || length == 9) {
+                textContent = if (textContent.substring(length - 1) == " ") {
+                    // 输入框最后字符为空格
+                    textContent.substring(0, length - 1)
+                } else {
+                    textContent.substring(
+                        0,
+                        length - 1
+                    ) + " " + textContent.substring(length - 1)
+                }
+                setText(textContent)
+                // 设置光标位置
+                setSelection(textContent.length)
+            }
+        }
+    }
+
 }

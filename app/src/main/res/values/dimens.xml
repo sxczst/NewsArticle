@@ -5,4 +5,5 @@
     <dimen name="d15">15dp</dimen>
     <dimen name="s15">15sp</dimen>
     <dimen name="s18">18sp</dimen>
+    <dimen name="s10">10sp</dimen>
 </resources>
