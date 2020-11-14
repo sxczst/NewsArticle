@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".ui.user.act.RegisterActivity">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -58,10 +60,10 @@
         android:inputType="number"
         android:maxLength="13"
         android:maxLines="1"
-        android:textSize="@dimen/s18"
         android:paddingStart="@dimen/d5"
         android:paddingTop="@dimen/d15"
         android:paddingBottom="@dimen/d15"
+        android:textSize="@dimen/s18"
         app:layout_constraintBottom_toBottomOf="@id/tv_86"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_86"
@@ -77,21 +79,30 @@
         app:layout_constraintStart_toStartOf="@id/tv_86"
         app:layout_constraintTop_toBottomOf="@id/tv_86" />
 
-    <CheckBox
-        android:id="@+id/cb_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="@id/v_line"
-        app:layout_constraintTop_toBottomOf="@id/v_line" />
+    <!--    <CheckBox-->
+    <!--        android:id="@+id/cb_"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="12dp"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/v_line"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/v_line" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/register_protocol"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/cb_"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/cb_"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/cb_" />-->
+
+    <org.sxczst.toutiao.news.view.MyCheckBox
+        android:id="@+id/my_check_box"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/register_protocol"
-        app:layout_constraintBottom_toBottomOf="@id/cb_"
-        app:layout_constraintStart_toEndOf="@id/cb_"
-        app:layout_constraintTop_toTopOf="@id/cb_" />
+        android:layout_marginTop="@dimen/d12"
+        app:layout_constraintEnd_toEndOf="@id/et_phone_number"
+        app:layout_constraintStart_toStartOf="@id/tv_86"
+        app:layout_constraintTop_toBottomOf="@id/v_line" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="45dp"
@@ -101,7 +112,7 @@
         app:cardCornerRadius="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cb_">
+        app:layout_constraintTop_toBottomOf="@id/my_check_box">
 
         <ImageView
             android:layout_width="wrap_content"
