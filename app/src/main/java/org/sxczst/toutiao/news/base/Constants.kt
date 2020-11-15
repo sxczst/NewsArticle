@@ -13,4 +13,10 @@ object Constants {
     const val COMMON_BAR = 2
 
     const val MOBILE = "mobile"
+
+    const val WEB_URL = "web_url"
+    const val WEB_TITLE = "web_title"
+
+    const val COUNT_TIME: Long = 60 * 1000
+    const val COUNT_TIME_INTERVAL: Long = 1 * 1000
 }

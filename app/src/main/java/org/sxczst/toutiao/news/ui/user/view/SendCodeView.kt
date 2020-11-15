@@ -5,5 +5,5 @@ package org.sxczst.toutiao.news.ui.user.view
  * @Date        :Created in 2020/11/15 8:32
  * @Description :
  */
-class SendCodeView {
+interface SendCodeView {
 }
