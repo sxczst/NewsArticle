@@ -11,4 +11,6 @@ object Constants {
 
     const val HOME_BAR = 1
     const val COMMON_BAR = 2
+
+    const val MOBILE = "mobile"
 }

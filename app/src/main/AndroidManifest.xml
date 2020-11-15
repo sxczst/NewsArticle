@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.user.act.RegisterActivity" />
+        <activity android:name=".ui.user.act.SendCodeActivity" />
     </application>
 
 </manifest>

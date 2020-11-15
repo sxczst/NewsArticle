@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">NewsArticle</string>
+
+    <!--注册页面-->
     <string name="register_title">账号注册</string>
-    <string name="register_protocol">我已阅读并同意\"用户协议\"和\"隐私政策\"</string>
     <string name="my_check_box_content_description">自定义复选框</string>
+    <string name="register_protocol">我已阅读并同意\"用户协议\"和\"隐私政策\"</string>
+
+    <!--发送验证码页面-->
+    <string name="send_code_enter_confirmation_code">输入验证码</string>
+    <string name="send_code_reacquire">重新获取</string>
+    <string name="send_code_modify">修改</string>
+
 </resources>

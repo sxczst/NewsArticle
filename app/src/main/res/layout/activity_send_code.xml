@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_ffffff"
+    tools:context=".ui.user.act.SendCodeActivity">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="7dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="37dp"
+        android:background="@android:color/white"
+        android:scaleType="centerCrop"
+        android:src="@drawable/btn_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d23"
+        android:layout_marginTop="42dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/send_code_enter_confirmation_code"
+        android:textColor="@color/c_222222"
+        android:textSize="21sp"
+        app:drawableStartCompat="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+    <TextView
+        android:id="@+id/tv_show_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d15"
+        android:textColor="@color/c_999999"
+        android:textSize="@dimen/s10"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="验证码已发送至+86 13753973040" />
+
+    <TextView
+        android:id="@+id/tv_modify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d15"
+        android:drawablePadding="@dimen/d5"
+        android:gravity="center"
+        android:text="@string/send_code_modify"
+        android:textColor="@color/c_999999"
+        android:textSize="@dimen/s10"
+        app:drawableStartCompat="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="@id/tv_show_mobile"
+        app:layout_constraintStart_toEndOf="@id/tv_show_mobile"
+        app:layout_constraintTop_toTopOf="@id/tv_show_mobile" />
+
+    <RelativeLayout
+        android:id="@+id/rl_input_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d23"
+        android:layout_marginTop="@dimen/d45"
+        android:layout_marginEnd="@dimen/d23"
+        app:layout_constraintTop_toBottomOf="@id/tv_show_mobile">
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/c_ffffff"
+            android:inputType="number"
+            android:paddingTop="@dimen/d15"
+            android:paddingBottom="@dimen/d15"
+            android:text="0 0 0 0"
+            android:textColor="@color/c_222222"
+            android:textSize="@dimen/s18" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="@string/send_code_reacquire"
+            android:textSize="@dimen/s10" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/et_code"
+            android:background="@color/c_999999" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_next"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/c_e6645f"
+        app:cardCornerRadius="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_input_code">
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

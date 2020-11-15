@@ -1,5 +1,6 @@
 package org.sxczst.toutiao.news.ui.user.act
 
+import android.content.Intent
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -8,6 +9,7 @@ import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_register.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseActivity
+import org.sxczst.toutiao.news.base.Constants.MOBILE
 import org.sxczst.toutiao.news.ui.user.presenter.RegisterPresenter
 import org.sxczst.toutiao.news.ui.user.view.RegisterView
 import org.sxczst.toutiao.news.utils.CommonUtils.checkMobile
@@ -77,7 +79,9 @@ class RegisterActivity : BaseActivity<RegisterView, RegisterPresenter>(), Regist
                 Toast.makeText(application, "请您勾选用户协议", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            // TODO: 2020/11/14 跳转获取验证码
+            var intent = Intent(this@RegisterActivity, SendCodeActivity::class.java)
+            intent.putExtra(MOBILE, phoneText)
+            startActivity(intent)
         }
 
         // 返回键
