@@ -6,7 +6,7 @@ package org.sxczst.toutiao.news.base
  * @Description :常量类
  */
 object Constants {
-    const val BASE_URL = "https://api.apiopen.top/"
+    const val BASE_URL = "http://toutiao.apkbus.com/wp-json/custom/v1/"
     const val BASE_URL_TEST = "https://api.apiopen.top/"
 
     const val HOME_BAR = 1
