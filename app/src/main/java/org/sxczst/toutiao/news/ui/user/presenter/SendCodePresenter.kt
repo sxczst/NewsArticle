@@ -6,24 +6,27 @@ import org.sxczst.toutiao.news.http.UserApi
 import org.sxczst.toutiao.news.mvp.model.BaseModel
 import org.sxczst.toutiao.news.mvp.presenter.BasePresenter
 import org.sxczst.toutiao.news.ui.user.model.CodeModel
-import org.sxczst.toutiao.news.ui.user.view.RegisterView
+import org.sxczst.toutiao.news.ui.user.view.SendCodeView
 
 /**
  * @Author      :sxczst
  * @Date        :Created in 2020/11/15 8:33
  * @Description :
  */
-class SendCodePresenter : BasePresenter<RegisterView>() {
+class SendCodePresenter : BasePresenter<SendCodeView>() {
+
     fun getCode(phoneNumber: String) {
         HttpUtils.sendHttp(
             HttpUtils.createApi(UserApi::class.java).getCode(phoneNumber),
             object : ResponseListener<BaseModel<CodeModel>> {
                 override fun onSuccess(data: BaseModel<CodeModel>) {
-
+                    if (data.code == 100) {
+                        getBaseView()?.setData(data.data)
+                    }
                 }
 
                 override fun onFail(error: String) {
-
+                    getBaseView()?.setError(error)
                 }
             }
         )

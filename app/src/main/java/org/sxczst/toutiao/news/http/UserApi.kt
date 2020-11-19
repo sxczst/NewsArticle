@@ -7,6 +7,7 @@ import org.sxczst.toutiao.news.ui.user.model.CodeModel
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.POST
 
 /**
  * @Author      :sxczst
@@ -23,6 +24,6 @@ interface UserApi {
      * 获取验证码
      */
     @FormUrlEncoded
-    @GET("user/news/sendCode")
+    @POST("user/news/sendCode")
     fun getCode(@Field("phoneNumber") phone: String): Observable<BaseModel<CodeModel>>
 }

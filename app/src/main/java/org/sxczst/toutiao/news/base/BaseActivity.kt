@@ -1,8 +1,7 @@
 package org.sxczst.toutiao.news.base
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.mvp.presenter.BasePresenter
 import org.sxczst.toutiao.news.mvp.view.BaseView
