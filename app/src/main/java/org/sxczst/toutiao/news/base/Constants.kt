@@ -20,4 +20,6 @@ object Constants {
 
     const val COUNT_TIME: Long = 60 * 1000
     const val COUNT_TIME_INTERVAL: Long = 1 * 1000
+
+    const val TOKEN = "token"
 }

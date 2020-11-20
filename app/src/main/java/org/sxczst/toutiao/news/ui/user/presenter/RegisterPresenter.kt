@@ -6,6 +6,7 @@ import org.sxczst.toutiao.news.http.UserApi
 import org.sxczst.toutiao.news.mvp.model.BaseModel
 import org.sxczst.toutiao.news.mvp.presenter.BasePresenter
 import org.sxczst.toutiao.news.ui.user.model.CodeModel
+import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 import org.sxczst.toutiao.news.ui.user.view.RegisterView
 
 /**
@@ -14,6 +15,10 @@ import org.sxczst.toutiao.news.ui.user.view.RegisterView
  * @Description :注册
  */
 class RegisterPresenter : BasePresenter<RegisterView>() {
+
+    /**
+     * 获取验证码
+     */
     fun getCode(phoneNumber: String) {
         HttpUtils.sendHttp(
             HttpUtils.createApi(UserApi::class.java).getCode(phoneNumber),
@@ -29,7 +34,24 @@ class RegisterPresenter : BasePresenter<RegisterView>() {
                 }
             }
         )
+    }
 
+    /**
+     * 账号注册
+     */
+    fun getRegister(phone: String, code: String) {
+        HttpUtils.sendHttp(HttpUtils.createApi(UserApi::class.java).getRegister(phone, code, 1, 1),
+            object : ResponseListener<BaseModel<RegisterModel>> {
+                override fun onSuccess(data: BaseModel<RegisterModel>) {
+                    if (data.code == 100) {
+                        getBaseView()?.setData(data.data)
+                    }
+                }
+
+                override fun onFail(error: String) {
+                    getBaseView()?.setError(error)
+                }
+            })
     }
 
 

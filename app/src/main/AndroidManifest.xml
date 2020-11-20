@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".ui.user.act.RegisterActivity" />
         <activity android:name=".ui.user.act.SendCodeActivity" />
+        <activity android:name=".ui.user.act.LoginNoPassActivity" />
+        <activity android:name=".ui.user.act.WebViewActivity" />
     </application>
 
 </manifest>

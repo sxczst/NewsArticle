@@ -8,5 +8,4 @@ import org.sxczst.toutiao.news.mvp.view.BaseView
  * @Description :用户注册
  */
 interface RegisterView : BaseView {
-
 }

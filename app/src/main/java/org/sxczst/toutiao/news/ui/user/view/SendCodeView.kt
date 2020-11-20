@@ -1,6 +1,7 @@
 package org.sxczst.toutiao.news.ui.user.view
 
 import org.sxczst.toutiao.news.mvp.view.BaseView
+import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 
 /**
  * @Author      :sxczst
@@ -8,4 +9,6 @@ import org.sxczst.toutiao.news.mvp.view.BaseView
  * @Description :
  */
 interface SendCodeView : BaseView {
+
+    fun onRegister(registerModel: RegisterModel)
 }

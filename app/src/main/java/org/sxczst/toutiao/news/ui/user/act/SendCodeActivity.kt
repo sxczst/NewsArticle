@@ -9,11 +9,15 @@ import org.sxczst.toutiao.news.base.BaseActivity
 import org.sxczst.toutiao.news.base.Constants
 import org.sxczst.toutiao.news.base.Constants.COUNT_TIME
 import org.sxczst.toutiao.news.base.Constants.COUNT_TIME_INTERVAL
+import org.sxczst.toutiao.news.base.Constants.TOKEN
+import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
 import org.sxczst.toutiao.news.ui.user.model.CodeModel
+import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 import org.sxczst.toutiao.news.ui.user.presenter.SendCodePresenter
 import org.sxczst.toutiao.news.ui.user.view.SendCodeView
 import org.sxczst.toutiao.news.utils.AuthCodeTimer
 import org.sxczst.toutiao.news.utils.CommonUtils
+import org.sxczst.toutiao.news.utils.SharedPreferencesUtils
 import org.sxczst.toutiao.news.view.CountDownListener
 
 /**
@@ -64,17 +68,36 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
             val code = CommonUtils.replaceBlank(et_code.text.toString())
             if (TextUtils.isEmpty(code)) {
                 // 请输入验证码
+                showToast("请输入验证码!")
                 return@setOnClickListener
             }
             if (code == this.code) {
                 // 进行注册业务
+                getPresenter()?.getRegister(CommonUtils.replaceBlank(phone!!), code)
             } else {
                 // 提示验证码错误
+                showToast("验证码错误!")
             }
         }
     }
 
     override fun createPresenter(): SendCodePresenter? = SendCodePresenter()
+
+    override fun onRegister(registerModel: RegisterModel) {
+        // 保存Token
+        SharedPreferencesUtils.saveToken(
+            this, TOKEN, registerModel.token
+        )
+        /**
+         * 收到Token，
+         * 注册成功，
+         * 关闭上一Activity
+         */
+        postMsg(EvtMsgModel(101, registerModel.token))
+
+        // 关闭自己
+        finish()
+    }
 
     override fun <T> setData(data: T) {
         if (data != null) {

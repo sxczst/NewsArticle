@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_register.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseActivity
 import org.sxczst.toutiao.news.base.Constants.MOBILE
+import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
 import org.sxczst.toutiao.news.ui.user.presenter.RegisterPresenter
 import org.sxczst.toutiao.news.ui.user.view.RegisterView
 import org.sxczst.toutiao.news.utils.CommonUtils.checkMobile
@@ -92,6 +93,16 @@ class RegisterActivity : BaseActivity<RegisterView, RegisterPresenter>(), Regist
     }
 
     override fun createPresenter(): RegisterPresenter? = RegisterPresenter()
+
+    override fun getMessage(message: EvtMsgModel<*>) {
+        super.getMessage(message)
+        if (message != null) {
+            // (在下一页面)注册成功关闭本页面
+            if (message.code == 101) {
+                finish()
+            }
+        }
+    }
 
     override fun <T> setData(data: T) {
     }
