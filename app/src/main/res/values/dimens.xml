@@ -4,7 +4,9 @@
     <dimen name="d10">10dp</dimen>
     <dimen name="d12">12dp</dimen>
     <dimen name="d15">15dp</dimen>
+    <dimen name="d20">20dp</dimen>
     <dimen name="d23">23dp</dimen>
+    <dimen name="d27">27dp</dimen>
     <dimen name="d45">45dp</dimen>
 
 

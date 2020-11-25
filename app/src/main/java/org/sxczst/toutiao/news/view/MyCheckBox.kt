@@ -44,10 +44,7 @@ class MyCheckBox @JvmOverloads constructor(
 
     init {
         // 加载布局文件
-        val view = View.inflate(context, R.layout.my_check_box, null)
-        addView(view)
-        // 局部文字变色
-        initSpan()
+        val view = View.inflate(context, R.layout.my_check_box, this)
         // 默认未选中
         setChecked(false)
     }
@@ -56,8 +53,8 @@ class MyCheckBox @JvmOverloads constructor(
      * 局部文字变色以及点击事件
      * 其他实现方法：得到关键字 设置颜色和点击事件
      */
-    fun initSpan() {
-        val span = SpannableString(resources.getString(R.string.register_protocol))
+    fun initSpan(agreementIds: Int) {
+        val span = SpannableString(resources.getString(agreementIds))
         // 两个字符串的颜色变化，不同的点击事件。
         span.setSpan(object : ClickableSpan() {
             override fun onClick(widget: View) {
@@ -134,5 +131,16 @@ class MyCheckBox @JvmOverloads constructor(
      */
     fun setClickableSpanText(clickableSpanText: ClickableSpanText) {
         mClickableSpanText = clickableSpanText
+    }
+
+    /**
+     * 设置是否展示 复选框图片
+     */
+    fun isShow(isShow: Boolean) {
+        if (isShow) {
+            image.visibility = View.VISIBLE
+        } else {
+            image.visibility = View.GONE
+        }
     }
 }

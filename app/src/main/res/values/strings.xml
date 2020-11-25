@@ -11,4 +11,7 @@
     <string name="send_code_reacquire">重新获取</string>
     <string name="send_code_modify">修改</string>
 
+    <!--免密登录页面-->
+    <string name="no_pass_title">免密登录</string>
+
 </resources>

@@ -51,6 +51,10 @@ class RegisterActivity : BaseActivity<RegisterView, RegisterPresenter>(), Regist
 
     override fun initView() {
 
+        // 设置用户协议
+        my_check_box.initSpan(R.string.register_protocol)
+        // 显示复选框图片
+        my_check_box.isShow(true)
         // 用户协议、隐私政策 复选框
         my_check_box.setOnClickListener {
             my_check_box.changeState()
