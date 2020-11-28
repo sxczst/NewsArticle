@@ -38,8 +38,9 @@ class SendCodePresenter : BasePresenter<SendCodeView>() {
     /**
      * 账号注册
      */
-    fun getRegister(phone: String, code: String) {
-        HttpUtils.sendHttp(HttpUtils.createApi(UserApi::class.java).getRegister(phone, code, 1, 1),
+    fun getRegister(phone: String, code: String, type: Int) {
+        HttpUtils.sendHttp(HttpUtils.createApi(UserApi::class.java)
+            .getRegister(phone, code, 1, type),
             object : ResponseListener<BaseModel<RegisterModel>> {
                 override fun onSuccess(data: BaseModel<RegisterModel>) {
                     if (data.code == 100) {

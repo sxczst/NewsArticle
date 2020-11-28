@@ -15,6 +15,7 @@ import org.sxczst.toutiao.news.ui.main.frg.HomeFragment
 import org.sxczst.toutiao.news.ui.main.model.TitleModel
 import org.sxczst.toutiao.news.ui.main.presenter.MainPresenter
 import org.sxczst.toutiao.news.ui.main.view.MainView
+import org.sxczst.toutiao.news.ui.user.act.LoginNoPassActivity
 import org.sxczst.toutiao.news.ui.user.act.RegisterActivity
 import org.sxczst.toutiao.news.utils.StatusBarUtils
 
@@ -33,7 +34,8 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView {
     override fun initView() {
         tv_test.setOnClickListener {
             getPresenter()?.getTest("test")
-            startActivity(Intent(this, RegisterActivity::class.java))
+//            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, LoginNoPassActivity::class.java))
         }
         StatusBarUtils.setStatusBar(this, Constants.COMMON_BAR, R.color.c_e6645f)
         val titles = resources.getStringArray(R.array.title)

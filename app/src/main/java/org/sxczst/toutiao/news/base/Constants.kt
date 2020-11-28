@@ -22,4 +22,16 @@ object Constants {
     const val COUNT_TIME_INTERVAL: Long = 1 * 1000
 
     const val TOKEN = "token"
+
+    // 用户操作
+    const val USER_ACTION = "user_action"
+
+    // 去注册操作
+    const val ACTION_REGISTER = 1
+
+    // 去登录操作
+    const val ACTION_LOGIN = 1
+
+    // 去找回密码操作
+    const val ACTION_FIND_PASS = 1
 }

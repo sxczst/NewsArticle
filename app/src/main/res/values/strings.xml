@@ -13,5 +13,6 @@
 
     <!--免密登录页面-->
     <string name="no_pass_title">免密登录</string>
+    <string name="login_agreement">登录即表示同意\"用户协议\"和\"隐私政策\"</string>
 
 </resources>

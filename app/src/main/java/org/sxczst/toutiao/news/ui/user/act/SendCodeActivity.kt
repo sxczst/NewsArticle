@@ -32,6 +32,11 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
     private var phone: String? = null
     private var code: String? = null
 
+    /**
+     * 用户操作类型
+     */
+    private var actionType: Int = 0
+
     override fun getLayoutId(): Int = R.layout.activity_send_code
 
     override fun initData() {
@@ -52,6 +57,7 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
 
         if (intent != null) {
             phone = intent.getStringExtra(Constants.MOBILE)
+            actionType = intent.getIntExtra(Constants.USER_ACTION, 0)
         }
 
         tv_modify.setOnClickListener {
@@ -73,7 +79,7 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
             }
             if (code == this.code) {
                 // 进行注册业务
-                getPresenter()?.getRegister(CommonUtils.replaceBlank(phone!!), code)
+                getPresenter()?.getRegister(CommonUtils.replaceBlank(phone!!), code, actionType)
             } else {
                 // 提示验证码错误
                 showToast("验证码错误!")
