@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.activity_login_no_pass.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseActivity
 import org.sxczst.toutiao.news.base.Constants
+import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
+import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 import org.sxczst.toutiao.news.ui.user.presenter.RegisterPresenter
 import org.sxczst.toutiao.news.ui.user.view.RegisterView
 import org.sxczst.toutiao.news.utils.CommonUtils
@@ -87,11 +89,28 @@ class LoginNoPassActivity : BaseActivity<RegisterView, RegisterPresenter>(), Reg
     }
 
     override fun createPresenter(): RegisterPresenter? = RegisterPresenter()
+    override fun onRegister(registerModel: RegisterModel) {
+
+    }
+
+    override fun isRegister(): Boolean = true
 
     override fun <T> setData(data: T) {
     }
 
     override fun setError(error: String) {
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_no, R.anim.slide_out_top)
+    }
+
+    override fun getMessage(message: EvtMsgModel<*>) {
+        super.getMessage(message)
+        if (message.code == 102) {
+            finish()
+        }
     }
 
     override fun afterTextChanged(s: Editable?) {

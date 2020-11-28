@@ -1,6 +1,7 @@
 package org.sxczst.toutiao.news.ui.user.act
 
 import org.sxczst.toutiao.news.base.BaseActivity
+import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 import org.sxczst.toutiao.news.ui.user.presenter.RegisterPresenter
 import org.sxczst.toutiao.news.ui.user.view.RegisterView
 
@@ -23,6 +24,14 @@ class WebViewActivity : BaseActivity<RegisterView, RegisterPresenter>(), Registe
     }
 
     override fun createPresenter(): RegisterPresenter? {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRegister(registerModel: RegisterModel) {
+        TODO("Not yet implemented")
+    }
+
+    override fun isRegister(): Boolean {
         TODO("Not yet implemented")
     }
 

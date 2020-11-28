@@ -94,16 +94,25 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
         SharedPreferencesUtils.saveToken(
             this, TOKEN, registerModel.token
         )
-        /**
-         * 收到Token，
-         * 注册成功，
-         * 关闭上一Activity
-         */
-        postMsg(EvtMsgModel(101, registerModel.token))
-
+        when (actionType) {
+            Constants.ACTION_LOGIN -> {
+                // 登录操作
+                postMsg(EvtMsgModel(102, registerModel.token))
+            }
+            else -> {
+                /**
+                 * 收到Token，
+                 * 注册成功，
+                 * 关闭上一Activity
+                 */
+                postMsg(EvtMsgModel(101, registerModel.token))
+            }
+        }
         // 关闭自己
         finish()
     }
+
+    override fun isRegister(): Boolean = true
 
     override fun <T> setData(data: T) {
         if (data != null) {

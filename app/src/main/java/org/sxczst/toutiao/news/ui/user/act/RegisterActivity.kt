@@ -11,6 +11,7 @@ import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseActivity
 import org.sxczst.toutiao.news.base.Constants.MOBILE
 import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
+import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 import org.sxczst.toutiao.news.ui.user.presenter.RegisterPresenter
 import org.sxczst.toutiao.news.ui.user.view.RegisterView
 import org.sxczst.toutiao.news.utils.CommonUtils.checkMobile
@@ -107,6 +108,12 @@ class RegisterActivity : BaseActivity<RegisterView, RegisterPresenter>(), Regist
             }
         }
     }
+
+    override fun onRegister(registerModel: RegisterModel) {
+
+    }
+
+    override fun isRegister(): Boolean = true
 
     override fun <T> setData(data: T) {
     }

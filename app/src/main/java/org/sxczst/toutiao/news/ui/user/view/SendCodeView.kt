@@ -11,4 +11,6 @@ import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 interface SendCodeView : BaseView {
 
     fun onRegister(registerModel: RegisterModel)
+
+    fun isRegister(): Boolean
 }
