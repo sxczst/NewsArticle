@@ -23,6 +23,7 @@
         <activity android:name=".ui.user.act.SendCodeActivity" />
         <activity android:name=".ui.user.act.LoginNoPassActivity" />
         <activity android:name=".ui.user.act.WebViewActivity" />
+        <activity android:name=".ui.user.act.PassLoginActivity" />
     </application>
 
 </manifest>

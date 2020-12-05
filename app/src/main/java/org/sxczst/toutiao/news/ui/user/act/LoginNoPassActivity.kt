@@ -71,6 +71,12 @@ class LoginNoPassActivity : BaseActivity<RegisterView, RegisterPresenter>(), Reg
             startActivity(RegisterActivity::class.java)
         }
 
+        // 密码登录
+        tv_password_login.setOnClickListener {
+            startActivity(PassLoginActivity::class.java)
+            finish()
+        }
+
     }
 
 
