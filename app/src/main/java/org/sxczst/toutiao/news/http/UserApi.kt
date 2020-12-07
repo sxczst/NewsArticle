@@ -50,4 +50,26 @@ interface UserApi {
         @Field("type") type: Int
     ): Observable<BaseModel<RegisterModel>>
 
+    /**
+     * 密码登录接口
+     */
+    @FormUrlEncoded
+    @POST("user/news/register")
+    fun getPassLogin(
+        @Field("phoneNumber") phone: String,
+        @Field("passWord") code: String,
+        // 当前设备唯一标识
+        @Field("onlyIdentifier") ider: Int,
+        /**
+         * 1. 账号注册
+         * 2. 手机登录
+         * 3. 密码登录
+         * 4. 微信登录
+         * 5. QQ登录
+         * 6. 一键登录
+         * 7. 邮箱登录
+         */
+        @Field("type") type: Int
+    ): Observable<BaseModel<RegisterModel>>
+
 }

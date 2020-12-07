@@ -51,15 +51,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
-    <org.sxczst.toutiao.news.view.MobileEditText
+    <org.sxczst.toutiao.news.view.PassMobileEditText
         android:id="@+id/et_phone_number"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:background="@android:color/white"
         android:hint="手机号/邮箱"
-        android:inputType="number"
-        android:maxLength="13"
+        android:maxLength="20"
         android:maxLines="1"
         android:paddingStart="@dimen/d5"
         android:paddingTop="@dimen/d15"
@@ -94,11 +93,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/v_line" />
 
-    <EditText
+    <org.sxczst.toutiao.news.view.PassMobileEditText
         android:id="@+id/et_pass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
+        android:layout_marginStart="@dimen/d23"
+        android:layout_marginEnd="@dimen/d15"
         android:background="@android:color/white"
         android:hint="密码"
         android:inputType="textPassword"
@@ -145,8 +145,8 @@
 
         <ImageView
             android:id="@+id/iv_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/d20"
+            android:layout_height="@dimen/d20"
             android:layout_gravity="center"
             android:src="@mipmap/ic_launcher" />
     </androidx.cardview.widget.CardView>
