@@ -21,4 +21,8 @@
     <!--找回密码页面-->
     <string name="find_pass_title">找回密码</string>
     <string name="find_pass">请输入绑定的手机号</string>
+
+    <!--设置新密码页面-->
+    <string name="set_new_pass_title">设置新密码</string>
+    <string name="set_new_pass">请输入新密码(6-20位英文或数字)</string>
 </resources>

@@ -1,5 +1,6 @@
 package org.sxczst.toutiao.news.ui.user.act
 
+import android.content.Intent
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -78,8 +79,25 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
                 return@setOnClickListener
             }
             if (code == this.code) {
-                // 进行注册业务
-                getPresenter()?.getRegister(CommonUtils.replaceBlank(phone!!), code, actionType)
+                when (actionType) {
+                    Constants.ACTION_LOGIN -> {
+                    }
+                    Constants.ACTION_REGISTER -> {
+                        // 进行注册业务
+                        getPresenter()?.getRegister(
+                            CommonUtils.replaceBlank(phone!!),
+                            code,
+                            actionType
+                        )
+                    }
+                    Constants.ACTION_FIND_PASS -> {
+                        val intent = Intent(this@SendCodeActivity, SetNewPassActivity::class.java)
+                        intent.putExtra(Constants.MOBILE, code)
+                        startActivity(intent)
+                        postMsg(EvtMsgModel(103, code))
+                        finish()
+                    }
+                }
             } else {
                 // 提示验证码错误
                 showToast("验证码错误!")

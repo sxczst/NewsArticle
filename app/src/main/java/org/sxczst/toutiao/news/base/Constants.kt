@@ -30,8 +30,8 @@ object Constants {
     const val ACTION_REGISTER = 1
 
     // 去登录操作
-    const val ACTION_LOGIN = 1
+    const val ACTION_LOGIN = 2
 
     // 去找回密码操作
-    const val ACTION_FIND_PASS = 1
+    const val ACTION_FIND_PASS = 3
 }

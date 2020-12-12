@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.user.act.FindPassActivity">
+
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="7dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="37dp"
+        android:background="@android:color/white"
+        android:contentDescription="注册界面返回键"
+        android:scaleType="centerCrop"
+        android:src="@drawable/btn_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="42dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/set_new_pass_title"
+        android:textColor="@color/c_222222"
+        android:textSize="21sp"
+        app:drawableStartCompat="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+    <org.sxczst.toutiao.news.view.MobileEditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d23"
+        android:layout_marginTop="@dimen/d78"
+        android:layout_marginEnd="@dimen/d30"
+        android:background="@android:color/white"
+        android:hint="新的密码"
+        android:inputType="text"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:paddingStart="@dimen/d5"
+        android:paddingTop="@dimen/d15"
+        android:paddingBottom="@dimen/d15"
+        android:textSize="@dimen/s18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/d10"
+        android:background="@color/c_d8d8d8"
+        app:layout_constraintEnd_toEndOf="@id/et_phone_number"
+        app:layout_constraintStart_toStartOf="@id/et_phone_number"
+        app:layout_constraintTop_toBottomOf="@id/et_phone_number" />
+
+    <TextView
+        android:id="@+id/my_check_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d15"
+        android:text="@string/set_new_pass"
+        android:textColor="@color/c_999999"
+        android:textSize="@dimen/s10"
+        app:layout_constraintEnd_toEndOf="@id/et_phone_number"
+        app:layout_constraintStart_toStartOf="@id/et_phone_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_next"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/c_e6645f"
+        app:cardCornerRadius="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_line">
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

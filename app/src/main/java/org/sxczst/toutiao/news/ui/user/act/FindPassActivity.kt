@@ -1,11 +1,15 @@
 package org.sxczst.toutiao.news.ui.user.act
 
+import android.content.Intent
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_find_pass.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseActivity
+import org.sxczst.toutiao.news.base.Constants
+import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
 import org.sxczst.toutiao.news.ui.user.presenter.LoginPresenter
 import org.sxczst.toutiao.news.ui.user.view.LoginView
 import org.sxczst.toutiao.news.utils.CommonUtils
@@ -20,7 +24,6 @@ class FindPassActivity : BaseActivity<LoginView, LoginPresenter>(), LoginView, T
     override fun getLayoutId(): Int = R.layout.activity_find_pass
 
     override fun initData() {
-        TODO("Not yet implemented")
     }
 
     override fun initView() {
@@ -32,18 +35,34 @@ class FindPassActivity : BaseActivity<LoginView, LoginPresenter>(), LoginView, T
 
         // 执行按钮
         cv_next.setCardBackgroundColor(ContextCompat.getColor(this, R.color.c_999999))
+
+        cv_next.setOnClickListener {
+            if (phoneText.isEmpty()) {
+                Toast.makeText(application, "请填写正确电话", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            val intent = Intent(this@FindPassActivity, SendCodeActivity::class.java)
+            intent.putExtra(Constants.MOBILE, phoneText)
+            intent.putExtra(Constants.USER_ACTION, Constants.ACTION_FIND_PASS)
+            startActivity(intent)
+        }
     }
 
     override fun isRegister(): Boolean = false
 
+    override fun getMessage(message: EvtMsgModel<*>) {
+        super.getMessage(message)
+        if (message.code == 103) {
+            finish()
+        }
+    }
+
     override fun createPresenter(): LoginPresenter? = LoginPresenter()
 
     override fun <T> setData(data: T) {
-        TODO("Not yet implemented")
     }
 
     override fun setError(error: String) {
-        TODO("Not yet implemented")
     }
 
     override fun afterTextChanged(s: Editable?) {

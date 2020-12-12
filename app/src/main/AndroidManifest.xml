@@ -25,6 +25,8 @@
         <activity android:name=".ui.user.act.LoginNoPassActivity" />
         <activity android:name=".ui.user.act.WebViewActivity" />
         <activity android:name=".ui.user.act.PassLoginActivity" />
+        <activity android:name=".ui.user.act.FindPassActivity" />
+        <activity android:name=".ui.user.act.SetNewPassActivity" />
     </application>
 
 </manifest>
