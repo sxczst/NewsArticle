@@ -17,4 +17,8 @@
 
     <!--密码登录页面-->
     <string name="pass_title">密码登录</string>
+
+    <!--找回密码页面-->
+    <string name="find_pass_title">找回密码</string>
+    <string name="find_pass">请输入绑定的手机号</string>
 </resources>

@@ -59,13 +59,18 @@ class PassLoginActivity : BaseActivity<LoginView, LoginPresenter>(), LoginView, 
         cv_next.setCardBackgroundColor(ContextCompat.getColor(this, R.color.c_999999))
 
         // 登录按钮
-        cv_next.setOnClickListener {
+        cv_next.setOnClickListener { getPresenter()?.getLogin(phone, pass) }
 
-            getPresenter()?.getLogin(phone, pass)
+        // 找回密码
+        tv_find_pass.setOnClickListener {
+            startActivity(FindPassActivity::class.java)
+            finish()
         }
     }
 
     override fun createPresenter(): LoginPresenter? = LoginPresenter()
+
+    override fun isRegister(): Boolean = false
 
     override fun <T> setData(data: T) {
         if (data != null) {

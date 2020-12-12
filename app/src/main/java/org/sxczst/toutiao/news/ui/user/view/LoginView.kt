@@ -8,4 +8,5 @@ import org.sxczst.toutiao.news.mvp.view.BaseView
  * @Description :
  */
 interface LoginView : BaseView {
+    fun isRegister(): Boolean
 }
