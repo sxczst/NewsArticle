@@ -92,9 +92,9 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
                     }
                     Constants.ACTION_FIND_PASS -> {
                         val intent = Intent(this@SendCodeActivity, SetNewPassActivity::class.java)
-                        intent.putExtra(Constants.MOBILE, code)
+                        intent.putExtra(Constants.MOBILE, phone)
+                        intent.putExtra(Constants.CODE, code)
                         startActivity(intent)
-                        postMsg(EvtMsgModel(103, code))
                         finish()
                     }
                 }

@@ -40,4 +40,30 @@ class LoginPresenter : BasePresenter<LoginView>() {
             }
         )
     }
+
+    /**
+     * 修改密码
+     */
+    fun getFindPass(phone: String, code: String, password: String) {
+        HttpUtils.sendHttp(
+            HttpUtils.createApi(UserApi::class.java).getFindPass(
+                phone,
+                password,
+                code
+            ),
+            object : ResponseListener<BaseModel<RegisterModel>> {
+                override fun onSuccess(data: BaseModel<RegisterModel>) {
+                    if (data != null) {
+                        if (data.code == 100) {
+                            getBaseView()?.setData(data.data)
+                        }
+                    }
+                }
+
+                override fun onFail(error: String) {
+                    getBaseView()?.setError(error)
+                }
+            }
+        )
+    }
 }

@@ -36,7 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_back" />
 
-    <org.sxczst.toutiao.news.view.MobileEditText
+    <org.sxczst.toutiao.news.view.PassMobileEditText
         android:id="@+id/et_phone_number"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:layout_marginEnd="@dimen/d30"
         android:background="@android:color/white"
         android:hint="新的密码"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:maxLength="20"
         android:maxLines="1"
         android:paddingStart="@dimen/d5"
@@ -91,7 +91,7 @@
 
         <ImageView
             android:id="@+id/iv_next"
-            android:layout_width="wrap_content"
+            android:layout_width="34dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@mipmap/ic_launcher" />

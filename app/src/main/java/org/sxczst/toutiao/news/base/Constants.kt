@@ -14,6 +14,7 @@ object Constants {
     const val COMMON_BAR = 2
 
     const val MOBILE = "mobile"
+    const val CODE = "code"
 
     const val WEB_URL = "web_url"
     const val WEB_TITLE = "web_title"

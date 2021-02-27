@@ -72,4 +72,15 @@ interface UserApi {
         @Field("type") type: Int
     ): Observable<BaseModel<RegisterModel>>
 
+    /**
+     * 找回密码接口
+     */
+    @FormUrlEncoded
+    @POST("user/forget/password")
+    fun getFindPass(
+        @Field("phoneNumber") phone: String,
+        @Field("passWord") password: String,
+        @Field("verificationCode") code: String
+    ): Observable<BaseModel<RegisterModel>>
+
 }
