@@ -13,6 +13,7 @@
 
 
     <dimen name="s10">10sp</dimen>
+    <dimen name="s12">12sp</dimen>
     <dimen name="s15">15sp</dimen>
     <dimen name="s18">18sp</dimen>
 </resources>

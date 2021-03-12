@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SettingsItem">
+        <attr name="leftTitle" format="string" />
+        <attr name="rightTitle" format="string" />
+        <attr name="contentTitle" format="string" />
+        <attr name="isShowButton" format="boolean" />
+        <attr name="isShowImage" format="boolean" />
+    </declare-styleable>
+
+    <style name="btn_off">
+        <item name="android:track">@drawable/btn_image</item>
+        <item name="android:thumb">@mipmap/ic_launcher_round</item>
+        <item name="android:background">@null</item>
+        <item name="android:textOn"> </item>
+        <item name="android:textOff"> </item>
+        <item name="android:switchMinWidth">50dp</item>
+    </style>
+</resources>
