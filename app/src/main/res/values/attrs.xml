@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SettingsItem">
+    <declare-styleable name="SettingsItemView">
         <attr name="leftTitle" format="string" />
         <attr name="rightTitle" format="string" />
         <attr name="contentTitle" format="string" />

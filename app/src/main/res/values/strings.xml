@@ -25,4 +25,9 @@
     <!--设置新密码页面-->
     <string name="set_new_pass_title">设置新密码</string>
     <string name="set_new_pass">请输入新密码(6-20位英文或数字)</string>
+
+    <!--隐私设置页面-->
+    <string name="privacy_settings_page_back">返回</string>
+    <string name="privacy_settings_page_title">设置</string>
+    <string name="privacy_settings_page_privacy_settings">隐私设置</string>
 </resources>

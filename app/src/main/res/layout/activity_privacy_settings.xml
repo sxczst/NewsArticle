@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_e5e5e5"
+    tools:context=".ui.user.act.PrivacySettingsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:contentInsetStart="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d12"
+            android:contentDescription="@string/privacy_settings_page_back"
+            android:src="?android:attr/fingerprintAuthDrawable" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/privacy_settings_page_title"
+            android:textColor="@color/c_222222"
+            android:textSize="@dimen/s13" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d7"
+            android:orientation="vertical">
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="夜间模式" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:leftTitle="清除缓存"
+                app:rightTitle="540B" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:leftTitle="字体大小"
+                app:rightTitle="大" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="列表显示摘要" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:leftTitle="非WiFi网络流量"
+                app:rightTitle="最佳效果(下载大图)" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:leftTitle="非WiFi网络播放提醒"
+                app:rightTitle="提醒一次" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="推送关闭" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="提示音开关" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="通知栏搜索设置" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="点击返回键获取新资讯" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:id="@+id/siv_h5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentTitle="智能过滤网站广告，为您节省更多流量"
+                app:isShowButton="true"
+                app:leftTitle="H5广告过滤" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d14"
+                android:layout_marginTop="@dimen/d12"
+                android:layout_marginBottom="@dimen/d10"
+                android:text="@string/privacy_settings_page_privacy_settings"
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/s10" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:id="@+id/siv_recommend_people_you_know"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowButton="true"
+                app:leftTitle="允许推荐给我可能认识的人" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowImage="true"
+                app:leftTitle="广告设置" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:leftTitle="检查版本"
+                app:rightTitle="7.4.0" />
+
+            <org.sxczst.toutiao.news.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShowImage="true"
+                app:leftTitle="关于头条" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,9 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_item"
     android:layout_width="match_parent"
-    tools:context="org.sxczst.toutiao.news.view.SettingsItemView"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:minHeight="@dimen/d45"
+    tools:context="org.sxczst.toutiao.news.view.SettingsItemView">
 
     <TextView
         android:id="@+id/tv_left_title"
@@ -64,5 +67,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/d0.5"
+        android:layout_marginStart="@dimen/d12"
+        android:layout_marginEnd="@dimen/d12"
+        android:background="@color/c_d8d8d8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,6 +77,10 @@ class LoginNoPassActivity : BaseActivity<RegisterView, RegisterPresenter>(), Reg
             finish()
         }
 
+        // 隐私设置
+        tv_privacy_setting.setOnClickListener {
+            startActivity(PrivacySettingsActivity::class.java)
+        }
     }
 
 

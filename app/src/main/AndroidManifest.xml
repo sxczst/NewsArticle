@@ -27,6 +27,7 @@
         <activity android:name=".ui.user.act.PassLoginActivity" />
         <activity android:name=".ui.user.act.FindPassActivity" />
         <activity android:name=".ui.user.act.SetNewPassActivity" />
+        <activity android:name=".ui.user.act.PrivacySettingsActivity" />
     </application>
 
 </manifest>
