@@ -30,4 +30,8 @@
     <string name="privacy_settings_page_back">返回</string>
     <string name="privacy_settings_page_title">设置</string>
     <string name="privacy_settings_page_privacy_settings">隐私设置</string>
+
+    <!--我的页面-->
+    <string name="mine_login">登录</string>
+    <string name="apply_for_certification">申请认证</string>
 </resources>

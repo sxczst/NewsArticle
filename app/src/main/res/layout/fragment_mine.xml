@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_ffffff"
+    tools:context="org.sxczst.toutiao.news.ui.main.frg.MineFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d46"
+            android:background="@mipmap/ic_launcher_round"
+            android:backgroundTint="@color/c_e6645f"
+            android:text="@string/mine_login"
+            android:textColor="@color/c_ffffff"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/g_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="iv_avatar,tv_name,tv_2,tv_apply_for_certification" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d12"
+            android:layout_marginTop="@dimen/d23"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d12"
+            android:text="用户"
+            android:textColor="@color/c_222222"
+            android:textSize="@dimen/s16"
+            app:layout_constraintBottom_toTopOf="@id/tv_2"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头条 0 关注 0 粉丝 0"
+            android:textColor="@color/c_222222"
+            android:textSize="@dimen/s10"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_apply_for_certification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/d12"
+            android:text="@string/apply_for_certification"
+            android:textColor="@color/c_e6645f"
+            android:textSize="@dimen/s10"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_common_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/d25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_login" />
+</androidx.constraintlayout.widget.ConstraintLayout>

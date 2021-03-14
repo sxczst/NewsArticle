@@ -9,9 +9,11 @@
     <dimen name="d15">15dp</dimen>
     <dimen name="d20">20dp</dimen>
     <dimen name="d23">23dp</dimen>
+    <dimen name="d25">25dp</dimen>
     <dimen name="d27">27dp</dimen>
     <dimen name="d30">30dp</dimen>
     <dimen name="d45">45dp</dimen>
+    <dimen name="d46">46dp</dimen>
     <dimen name="d78">78dp</dimen>
 
 
@@ -19,5 +21,6 @@
     <dimen name="s12">12sp</dimen>
     <dimen name="s13">13sp</dimen>
     <dimen name="s15">15sp</dimen>
+    <dimen name="s16">16sp</dimen>
     <dimen name="s18">18sp</dimen>
 </resources>

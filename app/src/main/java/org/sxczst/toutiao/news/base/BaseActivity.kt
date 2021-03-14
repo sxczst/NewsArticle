@@ -2,6 +2,7 @@ package org.sxczst.toutiao.news.base
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.greenrobot.eventbus.EventBus
@@ -87,5 +88,19 @@ abstract class BaseActivity<V, P : BasePresenter<V>> : AppCompatActivity(), Base
      */
     open fun postMsg(message: EvtMsgModel<*>) {
         EventBus.getDefault().post(message)
+    }
+
+    /**
+     * 设置暗色，文字为深色背景透明 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+     */
+    fun setLightStatusBar() {
+        StatusBarUtils.setStatus(this, View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR, R.color.c_ffffff)
+    }
+
+    /**
+     * 设置亮色，文字为白色背景透明 View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+     */
+    fun setLightNavigationBar() {
+        StatusBarUtils.setStatus(this, View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR, R.color.c_e6645f)
     }
 }
