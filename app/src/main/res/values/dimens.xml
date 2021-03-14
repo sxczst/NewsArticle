@@ -17,7 +17,9 @@
     <dimen name="d78">78dp</dimen>
 
 
+    <dimen name="s9">9sp</dimen>
     <dimen name="s10">10sp</dimen>
+    <dimen name="s11">11sp</dimen>
     <dimen name="s12">12sp</dimen>
     <dimen name="s13">13sp</dimen>
     <dimen name="s15">15sp</dimen>

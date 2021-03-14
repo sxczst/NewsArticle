@@ -10,17 +10,19 @@
         android:id="@+id/vp_home"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ctl_home"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/ctl_home"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:tl_iconHeight="@dimen/d30"
         app:tl_indicator_height="0dp"
-        app:tl_textSelectColor="@color/colorPrimary"
-        app:tl_textUnselectColor="@color/colorPrimaryDark"
-        app:tl_textsize="10sp" />
+        app:tl_textSelectColor="@color/c_e6645f"
+        app:tl_textUnselectColor="@color/c_222222"
+        app:tl_textsize="@dimen/s12" />
 
     <TextView
         android:id="@+id/tv_test"

@@ -34,4 +34,6 @@
     <!--我的页面-->
     <string name="mine_login">登录</string>
     <string name="apply_for_certification">申请认证</string>
+    <string name="commonlyUsed">常用</string>
+    <string name="viewAll">查看全部</string>
 </resources>

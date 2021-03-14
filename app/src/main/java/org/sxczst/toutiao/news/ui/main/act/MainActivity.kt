@@ -38,7 +38,7 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView {
 //            startActivity(Intent(this, RegisterActivity::class.java))
             startActivity(Intent(this, LoginNoPassActivity::class.java))
         }
-        StatusBarUtils.setStatusBar(this, Constants.COMMON_BAR, R.color.c_e6645f)
+        setLightNavigationBar()
         val titles = resources.getStringArray(R.array.title)
         val selectIds = resources.obtainTypedArray(R.array.select)
         val unSelectIds = resources.obtainTypedArray(R.array.un_select)
