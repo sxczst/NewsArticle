@@ -22,7 +22,6 @@
             android:backgroundTint="@color/c_e6645f"
             android:text="@string/mine_login"
             android:textColor="@color/c_ffffff"
-            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +30,7 @@
             android:id="@+id/g_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:constraint_referenced_ids="iv_avatar,tv_name,tv_2,tv_apply_for_certification" />
 
         <ImageView
@@ -85,5 +85,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/d25"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_login" />
+        app:layout_constraintTop_toBottomOf="@id/cl_login"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_common_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

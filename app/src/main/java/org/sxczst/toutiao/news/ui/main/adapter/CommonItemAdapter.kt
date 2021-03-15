@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_common_item_view.view.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.ui.main.model.CommonItemModel
+import org.sxczst.toutiao.news.utils.ImageLoaderUtils
 
 /**
  * @author      sxczst
@@ -25,6 +26,7 @@ class CommonItemAdapter(private val commonItemList: MutableList<CommonItemModel>
     override fun onBindViewHolder(holder: CommonItemHolder, position: Int) {
         val commonItemModel = commonItemList[position]
         holder.mTitle.text = commonItemModel.title
+        ImageLoaderUtils.loadImage(holder.itemView.context, commonItemModel.url, holder.mIvContent)
     }
 
     override fun getItemCount() = commonItemList.size

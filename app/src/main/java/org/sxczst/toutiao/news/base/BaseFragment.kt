@@ -1,5 +1,6 @@
 package org.sxczst.toutiao.news.base
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,6 +47,14 @@ abstract class BaseFragment<V, P : BasePresenter<V>> : Fragment(), BaseView {
      * 获取父类的 Presenter
      */
     fun getPresenter() = mPresenter
+
+    /**
+     * 跳转页面
+     * @param clz 所跳转的目的Activity类
+     */
+    fun startActivity(clz: Class<*>) {
+        startActivity(Intent(activity, clz))
+    }
 
     override fun onDestroy() {
         super.onDestroy()

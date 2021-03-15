@@ -2,13 +2,11 @@ package org.sxczst.toutiao.news.http
 
 import io.reactivex.Observable
 import org.sxczst.toutiao.news.mvp.model.BaseModel
+import org.sxczst.toutiao.news.ui.main.model.CommonModel
 import org.sxczst.toutiao.news.ui.main.model.MainModel
 import org.sxczst.toutiao.news.ui.user.model.CodeModel
 import org.sxczst.toutiao.news.ui.user.model.RegisterModel
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 /**
  * @Author      :sxczst
@@ -83,4 +81,10 @@ interface UserApi {
         @Field("verificationCode") code: String
     ): Observable<BaseModel<RegisterModel>>
 
+    /**
+     * 获取我的列表
+     */
+    @GET("user/news/myList")
+    fun getCommonList(@Query("type") type: Int)
+            : Observable<BaseModel<List<CommonModel>>>
 }

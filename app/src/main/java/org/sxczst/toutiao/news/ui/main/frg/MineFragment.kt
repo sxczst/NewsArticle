@@ -6,10 +6,10 @@ import kotlinx.android.synthetic.main.fragment_mine.view.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseFragment
 import org.sxczst.toutiao.news.ui.main.adapter.CommonAdapter
-import org.sxczst.toutiao.news.ui.main.model.CommonItemModel
 import org.sxczst.toutiao.news.ui.main.model.CommonModel
 import org.sxczst.toutiao.news.ui.main.presenter.MinePresenter
 import org.sxczst.toutiao.news.ui.main.view.MineView
+import org.sxczst.toutiao.news.ui.user.act.LoginNoPassActivity
 
 /**
  * @author      sxczst
@@ -17,33 +17,30 @@ import org.sxczst.toutiao.news.ui.main.view.MineView
  */
 class MineFragment : BaseFragment<MineView, MinePresenter>(), MineView {
 
-    private val mCommonList = mutableListOf<CommonItemModel>()
-    private val mCommonList1 = mutableListOf<CommonItemModel>()
     private val mList = mutableListOf<CommonModel>()
+
+    private lateinit var mView: View
 
     override fun getLayoutId() = R.layout.fragment_mine
 
     override fun initData() {
+        getPresenter()?.getCommonList(1)
     }
 
     override fun initView(view: View) {
-        val item = CommonItemModel("我的关注", "")
-        mCommonList.add(item)
-        val item1 = CommonItemModel("全民抽奖", "")
-        mCommonList1.add(item1)
-
-        val commonModel = CommonModel("常用", mCommonList)
-        mList.add(commonModel)
-        val commonModel1 = CommonModel("发现", mCommonList1)
-        mList.add(commonModel1)
-
-        view.rv_common_list.layoutManager = LinearLayoutManager(activity)
-        view.rv_common_list.adapter = CommonAdapter(mList)
+        mView = view
+        view.btn_login.setOnClickListener {
+            startActivity(LoginNoPassActivity::class.java)
+            activity?.overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom)
+        }
     }
 
     override fun createPresenter() = MinePresenter()
 
     override fun <T> setData(data: T) {
+        mList.addAll(data as List<CommonModel>)
+        mView.rv_common_list.layoutManager = LinearLayoutManager(activity)
+        mView.rv_common_list.adapter = CommonAdapter(mList)
     }
 
     override fun setError(error: String) {
