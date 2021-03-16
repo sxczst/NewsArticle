@@ -126,6 +126,7 @@ class SendCodeActivity : BaseActivity<SendCodeView, SendCodePresenter>(), SendCo
                 postMsg(EvtMsgModel(101, registerModel.token))
             }
         }
+        postMsg(EvtMsgModel(104, registerModel.token))
         // 关闭自己
         finish()
     }

@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_register.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseActivity
 import org.sxczst.toutiao.news.base.Constants
+import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
 import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 import org.sxczst.toutiao.news.ui.user.presenter.LoginPresenter
 import org.sxczst.toutiao.news.ui.user.view.LoginView
@@ -80,7 +81,8 @@ class PassLoginActivity : BaseActivity<LoginView, LoginPresenter>(), LoginView, 
                 Constants.TOKEN,
                 mRegister.token
             )
-            finish();
+            postMsg(EvtMsgModel(104, mRegister.token))
+            finish()
         }
     }
 

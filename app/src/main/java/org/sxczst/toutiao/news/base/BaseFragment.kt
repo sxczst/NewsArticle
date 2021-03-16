@@ -6,8 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
+import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
 import org.sxczst.toutiao.news.mvp.presenter.BasePresenter
 import org.sxczst.toutiao.news.mvp.view.BaseView
+import org.sxczst.toutiao.news.utils.SharedPreferencesUtils
 
 /**
  * @author      sxczst
@@ -16,20 +21,27 @@ import org.sxczst.toutiao.news.mvp.view.BaseView
 abstract class BaseFragment<V, P : BasePresenter<V>> : Fragment(), BaseView {
     private var mPresenter: P? = null
 
+    private lateinit var rootView: View
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(getLayoutId(), container, false)
+        rootView = inflater.inflate(getLayoutId(), container, false)
         if (mPresenter == null) {
             mPresenter = createPresenter()
         }
         mPresenter?.bindView(this as V)
-        initView(view)
+        if (isRegister()) {
+            EventBus.getDefault().register(this)
+        }
+        initView(rootView)
         initData()
-        return view
+        return rootView
     }
+
+    protected abstract fun isRegister(): Boolean
 
     protected abstract fun getLayoutId(): Int
 
@@ -48,6 +60,24 @@ abstract class BaseFragment<V, P : BasePresenter<V>> : Fragment(), BaseView {
      */
     fun getPresenter() = mPresenter
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        mPresenter?.unBindView()
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this)
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    open fun getMessage(message: EvtMsgModel<*>) {
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    open fun getMessageSticky(message: EvtMsgModel<*>) {
+
+    }
+
     /**
      * 跳转页面
      * @param clz 所跳转的目的Activity类
@@ -62,4 +92,7 @@ abstract class BaseFragment<V, P : BasePresenter<V>> : Fragment(), BaseView {
         mPresenter?.unBindView()
     }
 
+    fun getToken(): String? = SharedPreferencesUtils.getSaveToken(activity!!, Constants.TOKEN)
+
+    fun isTokenNotNull() = getToken()?.isNotEmpty() ?: false
 }

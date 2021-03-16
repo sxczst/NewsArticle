@@ -4,6 +4,7 @@ import io.reactivex.Observable
 import org.sxczst.toutiao.news.mvp.model.BaseModel
 import org.sxczst.toutiao.news.ui.main.model.CommonModel
 import org.sxczst.toutiao.news.ui.main.model.MainModel
+import org.sxczst.toutiao.news.ui.main.model.UserInfoModel
 import org.sxczst.toutiao.news.ui.user.model.CodeModel
 import org.sxczst.toutiao.news.ui.user.model.RegisterModel
 import retrofit2.http.*
@@ -87,4 +88,12 @@ interface UserApi {
     @GET("user/news/myList")
     fun getCommonList(@Query("type") type: Int)
             : Observable<BaseModel<List<CommonModel>>>
+
+    /**
+     * 获取用户信息
+     */
+    @GET("user/news/mineInformation")
+    fun getUserInfo(@Header("token") token: String)
+            : Observable<BaseModel<UserInfoModel>>
+
 }

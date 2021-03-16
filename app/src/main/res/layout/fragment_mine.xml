@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="iv_avatar,tv_name,tv_2,tv_apply_for_certification" />
+            app:constraint_referenced_ids="iv_avatar,tv_name,tv_number,tv_apply_for_certification" />
 
         <ImageView
             android:id="@+id/iv_avatar"
@@ -51,12 +51,12 @@
             android:text="用户"
             android:textColor="@color/c_222222"
             android:textSize="@dimen/s16"
-            app:layout_constraintBottom_toTopOf="@id/tv_2"
+            app:layout_constraintBottom_toTopOf="@id/tv_number"
             app:layout_constraintStart_toEndOf="@id/iv_avatar"
             app:layout_constraintTop_toTopOf="@id/iv_avatar" />
 
         <TextView
-            android:id="@+id/tv_2"
+            android:id="@+id/tv_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="头条 0 关注 0 粉丝 0"
