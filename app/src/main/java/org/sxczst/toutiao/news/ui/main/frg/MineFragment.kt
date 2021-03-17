@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.fragment_mine.view.*
 import org.sxczst.toutiao.news.R
 import org.sxczst.toutiao.news.base.BaseFragment
 import org.sxczst.toutiao.news.mvp.model.EvtMsgModel
+import org.sxczst.toutiao.news.ui.main.act.UpdateUserInfoActivity
 import org.sxczst.toutiao.news.ui.main.adapter.CommonAdapter
 import org.sxczst.toutiao.news.ui.main.model.CommonModel
 import org.sxczst.toutiao.news.ui.main.model.UserInfoModel
@@ -49,6 +50,9 @@ class MineFragment : BaseFragment<MineView, MinePresenter>(), MineView {
         view.btn_login.setOnClickListener {
             startActivity(LoginNoPassActivity::class.java)
             activity?.overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom)
+        }
+        view.iv_avatar.setOnClickListener {
+            startActivity(UpdateUserInfoActivity::class.java)
         }
     }
 

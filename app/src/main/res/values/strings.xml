@@ -36,4 +36,7 @@
     <string name="apply_for_certification">申请认证</string>
     <string name="commonlyUsed">常用</string>
     <string name="viewAll">查看全部</string>
+
+    <!--编辑资料页面-->
+    <string name="update_user_info_title">编辑资料</string>
 </resources>

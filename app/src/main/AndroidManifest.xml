@@ -20,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.main.act.UpdateUserInfoActivity" />
+
         <activity android:name=".ui.user.act.RegisterActivity" />
         <activity android:name=".ui.user.act.SendCodeActivity" />
         <activity android:name=".ui.user.act.LoginNoPassActivity" />
