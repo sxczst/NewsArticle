@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_ffffff"
+    android:minWidth="173dp"
+    tools:context="org.sxczst.toutiao.news.view.GenderDialog">
+
+
+    <TextView
+        android:id="@+id/tv_male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d19"
+        android:background="@drawable/bg_dialog_text"
+        android:text="@string/gender_dialog_male"
+        android:textColor="@color/c_2a8fd6"
+        android:textSize="@dimen/s12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d19"
+        android:background="@drawable/bg_dialog_text"
+        android:text="@string/gender_dialog_female"
+        android:textColor="@color/c_2a8fd6"
+        android:textSize="@dimen/s12"
+        app:layout_constraintEnd_toEndOf="@id/tv_male"
+        app:layout_constraintStart_toStartOf="@id/tv_male"
+        app:layout_constraintTop_toBottomOf="@id/tv_male" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d19"
+        android:layout_marginBottom="@dimen/d19"
+        android:background="@drawable/bg_dialog_text"
+        android:text="@string/photo_dialog_cancel"
+        android:textColor="@color/c_2a8fd6"
+        android:textSize="@dimen/s12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_male"
+        app:layout_constraintStart_toStartOf="@id/tv_male"
+        app:layout_constraintTop_toBottomOf="@id/tv_female" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

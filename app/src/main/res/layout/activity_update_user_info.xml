@@ -33,6 +33,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <org.sxczst.toutiao.news.view.UserItemView
+        android:id="@+id/uiv_avatar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/d10"

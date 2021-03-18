@@ -39,4 +39,13 @@
 
     <!--编辑资料页面-->
     <string name="update_user_info_title">编辑资料</string>
+
+    <!--设置头像对话框-->
+    <string name="select_from_album">从相册选择</string>
+    <string name="photo_dialog_photograph">拍照</string>
+    <string name="photo_dialog_cancel">取消</string>
+
+    <!--设置性别对话框-->
+    <string name="gender_dialog_male">男</string>
+    <string name="gender_dialog_female">女</string>
 </resources>

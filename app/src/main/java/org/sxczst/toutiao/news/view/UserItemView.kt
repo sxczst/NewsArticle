@@ -22,6 +22,7 @@ class UserItemView @JvmOverloads constructor(
     private var isShowImage = false
     private lateinit var view: View
     private val userItemArray = context.obtainStyledAttributes(attrs, R.styleable.UserItemView)
+    private var userOnClickListener: UserOnClickListener? = null
 
     init {
         leftTitle = userItemArray.getString(R.styleable.UserItemView_user_left_title)
@@ -33,6 +34,9 @@ class UserItemView @JvmOverloads constructor(
     private fun initView() {
         view = LayoutInflater.from(context).inflate(R.layout.item_user_info_view, this)
         view.tv_left_title.text = leftTitle
+        view.setOnClickListener {
+            userOnClickListener?.userOnClick(it)
+        }
         isShowImage()
     }
 
@@ -58,4 +62,11 @@ class UserItemView @JvmOverloads constructor(
         view.tv_right_content.setTextColor(ContextCompat.getColor(context, color))
     }
 
+    fun setUserOnClickListener(userOnClickListener: UserOnClickListener) {
+        this.userOnClickListener = userOnClickListener
+    }
+
+    interface UserOnClickListener {
+        fun userOnClick(view: View)
+    }
 }
