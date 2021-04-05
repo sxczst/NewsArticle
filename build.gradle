@@ -20,6 +20,7 @@ allprojects {
             url 'https://maven.aliyun.com/repository/public/'
         }
         maven { url "https://oss.jfrog.org/libs-snapshot" }
+        maven { url 'https://jitpack.io' }
         google()
         jcenter()
     }

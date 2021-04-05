@@ -40,4 +40,13 @@
         app:layout_constraintTop_toBottomOf="@id/tb_title"
         app:user_image_show="true"
         app:user_left_title="头像" />
+
+    <org.sxczst.toutiao.news.view.UserItemView
+        android:id="@+id/uiv_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d10"
+        app:layout_constraintTop_toBottomOf="@id/uiv_avatar"
+        app:user_image_show="true"
+        app:user_left_title="性别" />
 </androidx.constraintlayout.widget.ConstraintLayout>

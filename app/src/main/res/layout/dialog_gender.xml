@@ -11,10 +11,13 @@
 
     <TextView
         android:id="@+id/tv_male"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/d19"
         android:background="@drawable/bg_dialog_text"
+        android:gravity="center"
+        android:paddingTop="@dimen/d10"
+        android:paddingBottom="@dimen/d10"
         android:text="@string/gender_dialog_male"
         android:textColor="@color/c_2a8fd6"
         android:textSize="@dimen/s12"
@@ -24,10 +27,12 @@
 
     <TextView
         android:id="@+id/tv_female"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d19"
         android:background="@drawable/bg_dialog_text"
+        android:gravity="center"
+        android:paddingTop="@dimen/d10"
+        android:paddingBottom="@dimen/d10"
         android:text="@string/gender_dialog_female"
         android:textColor="@color/c_2a8fd6"
         android:textSize="@dimen/s12"
@@ -37,11 +42,13 @@
 
     <TextView
         android:id="@+id/tv_cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d19"
         android:layout_marginBottom="@dimen/d19"
         android:background="@drawable/bg_dialog_text"
+        android:gravity="center"
+        android:paddingTop="@dimen/d10"
+        android:paddingBottom="@dimen/d10"
         android:text="@string/photo_dialog_cancel"
         android:textColor="@color/c_2a8fd6"
         android:textSize="@dimen/s12"
